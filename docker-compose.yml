@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    minecraft:
+        image: naviodev/pandaspigot:latest
+        container_name: minecraft
+        stdin_open: true
+        tty: true
+        restart: always
+        networks:
+            - minecraft
+        ports:
+            - 25565:25565
+        volumes:
+            - minecraft-config:/opt/minecraft/config
+            - minecraft-worlds:/opt/minecraft/worlds
+            - minecraft-plugins:/opt/minecraft/plugins
+            - minecraft-data:/opt/minecraft/data
+            - minecraft-logs:/opt/minecraft/logs
+
+volumes:
+    minecraft-config: {}
+    minecraft-worlds: {}
+    minecraft-plugins: {}
+    minecraft-data: {}
+    minecraft-logs: {}
+
+networks:
+    minecraft: {}
