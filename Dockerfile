@@ -1,4 +1,4 @@
-FROM itzg/minecraft-server:java17-openj9 as build
+FROM itzg/minecraft-server:java17 as build
 
 ###################################
 ### Maintained by Oliwier Fijas ###
@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y unzip curl \
 #####################
 ### Runtime stage ###
 #####################
-FROM itzg/minecraft-server:java17-openj9 as runtime
+FROM itzg/minecraft-server:java17 as runtime
 
 ARG PANDA_PATH=/panda
 
